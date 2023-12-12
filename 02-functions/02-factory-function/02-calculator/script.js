@@ -5,12 +5,6 @@ function createCalculator() {
     btnDelete: document.querySelector('.btn-delete'),
     btnEqual: document.querySelector('.btn-equal'),
 
-
-
-
-
-
-
     start() {
       this.btnClicks();
       this.pressEnter();
@@ -18,7 +12,7 @@ function createCalculator() {
 
     pressEnter() {
       this.display.addEventListener('keyup', e => {
-        if(e.keyCode === 13) {
+        if (e.keyCode === 13) {
           this.result();
         }
       })
@@ -37,7 +31,7 @@ function createCalculator() {
       try {
         // usar o método eval com cautela
         mathEquation = eval(mathEquation);
-        if(!mathEquation) {
+        if (!mathEquation) {
           alert('Invalid result');
           return;
         }
@@ -50,7 +44,7 @@ function createCalculator() {
 
     btnClicks() {
       // this -> calculadora
-      // ao utilizar arrow function o this se mantém "calculadora", ao utilizar função comum, o this a partir da linha 19 passa a ser document, o que necessita fazer bind na linha 26 para manter o this na calculadora.
+      // ao utilizar arrow function o this se mantém "calculadora", ao utilizar função comum, o this a partir da linha 48 passa a ser document, o que necessita fazer bind na linha 66 para manter o this na calculadora.
       document.addEventListener('click', e => {
         const el = e.target;
 
@@ -58,15 +52,15 @@ function createCalculator() {
           this.btnToDisplay(el.innerText);
         };
 
-        if(el.classList.contains('btn-clear')) {
+        if (el.classList.contains('btn-clear')) {
           this.clearDisplay();
         }
 
-        if(el.classList.contains('btn-delete')) {
+        if (el.classList.contains('btn-delete')) {
           this.deleteNumber();
         }
 
-        if(el.classList.contains('btn-equal')) {
+        if (el.classList.contains('btn-equal')) {
           this.result();
         }
       });
