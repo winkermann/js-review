@@ -4,7 +4,7 @@ function Calculator() {
   this.start = () => {
     this.btnClicks();
     this.pressEnter();
-    this.inputFocus();5+5
+    this.inputFocus();
   }
 
   this.btnClicks = () => {
